@@ -83,17 +83,42 @@ def service_health(name: str):
 
 @app.get("/probe-all")
 def probe_all():
-    """Probe every service that has a known live endpoint. Graceful: down != error."""
+    """Probe every service with a known live endpoint.
+    Uses the pure-C EPYC-native prober (./probe) when available; falls back to
+    the pure-Python prober otherwise. Graceful: down != error."""
     c = load_catalog()
+    endpoints = []
+    for layer, services in c["layers"].items():
+        for s in services:
+            if s.get("endpoint"):
+                endpoints.append(s["endpoint"])
+    if not endpoints:
+        return {"probed": 0, "up": 0, "down": 0, "results": []}
+
+    probe_bin = os.path.join(REPO_ROOT, "probe")
+    if os.path.exists(probe_bin) and os.access(probe_bin, os.X_OK):
+        import subprocess
+        inp = "\n".join(endpoints) + "\n"
+        try:
+            out = subprocess.run([probe_bin], input=inp, capture_output=True,
+                                 text=True, timeout=10)
+            import json as _json
+            results = _json.loads(out.stdout)
+            up = sum(1 for r in results if r["status"] == "up")
+            return {"engine": "c-epyc-native", "probed": len(results),
+                    "up": up, "down": len(results) - up, "results": results}
+        except Exception:
+            pass  # fall through to python
+    # python fallback
     results = []
     for layer, services in c["layers"].items():
         for s in services:
             if s.get("endpoint"):
-                results.append({"name": s["name"], "layer": layer,
-                                "probe": probe(s["endpoint"])})
-    up = sum(1 for r in results if r["probe"]["status"] == "up")
-    return {"probed": len(results), "up": up, "down": len(results) - up,
-            "results": results}
+                results.append({"url": s["endpoint"], **probe(s["endpoint"]),
+                                "layer": layer, "name": s["name"]})
+    up = sum(1 for r in results if r["status"] == "up")
+    return {"engine": "python-fallback", "probed": len(results),
+            "up": up, "down": len(results) - up, "results": results}
 
 
 if __name__ == "__main__":
