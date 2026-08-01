@@ -1,0 +1,10 @@
+[Unit]
+Description=Enterprise Architecture Control Plane — enterprise health monitor
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/ai-workspace/repos/enterprise-architecture
+ExecStart=%h/.local/bin/uv run python monitor.py
+# uv run resolves the project venv; falls back to C binary if CP is down

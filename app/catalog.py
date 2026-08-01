@@ -9,7 +9,7 @@ It classifies every live repo, assigns orphaned services to a layer, and
 exposes the wiring graph used by the FastAPI control plane.
 """
 from __future__ import annotations
-import json, subprocess, datetime, os
+import json, subprocess, datetime, os, urllib.request, urllib.error
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -49,6 +49,13 @@ SERVICE_ENDPOINTS = {
     "comfyui-api": "http://localhost:8188/",
     "hardonia-checkout-api": "http://localhost:8012/health",
     "ai-lab-audit-api": "http://localhost:8011/health",
+}
+
+# Services that also expose an OpenAPI spec the control plane can ingest.
+OPENAPI_ENDPOINTS = {
+    "ai-lab-command-center": "http://localhost:8090/openapi.json",
+    "hardonia-checkout-api": "http://localhost:8012/openapi.json",
+    "ollama-router": "http://localhost:11438/openapi.json",
 }
 
 
@@ -108,6 +115,20 @@ def load_committed_catalog() -> dict:
     if os.path.exists(p):
         return json.load(open(p))
     return {"repos": []}
+
+
+def fetch_openapi(name: str, url: str, timeout: float = 2.0) -> dict | None:
+    """Ingest a live OpenAPI spec. Returns {title, version, path_count} or None."""
+    try:
+        req = urllib.request.Request(url, method="GET")
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
+            spec = json.loads(resp.read().decode())
+        paths = spec.get("paths", {})
+        info = spec.get("info", {})
+        return {"title": info.get("title"), "version": info.get("version"),
+                "path_count": len(paths)}
+    except Exception:
+        return None
 
 
 if __name__ == "__main__":

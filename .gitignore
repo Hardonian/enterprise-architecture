@@ -4,3 +4,4 @@ __pycache__/
 *.gcda
 *.gcno
 probe.gen
+state/

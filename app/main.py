@@ -81,6 +81,19 @@ def service_health(name: str):
     return {"name": name, "probe": probe(endpoint)}
 
 
+@app.get("/openapi")
+def openapi_status():
+    """Ingest live OpenAPI specs from services that expose them.
+    Returns the spec summary per service (graceful: unreachable = skipped)."""
+    from app import catalog as cat
+    results = {}
+    for name, url in cat.OPENAPI_ENDPOINTS.items():
+        spec = cat.fetch_openapi(name, url)
+        if spec:
+            results[name] = spec
+    return {"ingested": len(results), "specs": results}
+
+
 @app.get("/probe-all")
 def probe_all():
     """Probe every service with a known live endpoint.

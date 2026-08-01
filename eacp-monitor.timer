@@ -1,0 +1,10 @@
+[Unit]
+Description=Enterprise Architecture Control Plane — 15-min monitor timer
+
+[Timer]
+OnBootSec=60
+OnUnitActiveSec=900
+Persistent=true
+
+[Install]
+WantedBy=timers.target
