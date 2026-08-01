@@ -81,6 +81,18 @@ def service_health(name: str):
     return {"name": name, "probe": probe(endpoint)}
 
 
+from fastapi.responses import FileResponse
+
+DASHBOARD_PATH = "/home/scott/ai-lab/state/enterprise-dashboard/index.html"
+
+@app.get("/dashboard")
+def dashboard():
+    """Live enterprise dashboard (self-contained HTML, polls this API)."""
+    if os.path.exists(DASHBOARD_PATH):
+        return FileResponse(DASHBOARD_PATH, media_type="text/html")
+    return {"error": "dashboard not found", "path": DASHBOARD_PATH}
+
+
 @app.get("/infrastructure")
 def infrastructure():
     """Live runtime topology: Docker containers, listening ports, GPU allocation.

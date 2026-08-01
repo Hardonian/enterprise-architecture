@@ -1,0 +1,10 @@
+[Unit]
+Description=Idle-GPU batch scheduler timer (gated on first real payment)
+
+[Timer]
+OnBootSec=120
+OnUnitActiveSec=600
+Persistent=true
+
+[Install]
+WantedBy=timers.target

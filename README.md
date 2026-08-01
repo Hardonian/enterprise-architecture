@@ -68,3 +68,17 @@ substrate — Docker containers (Postgres-pgvector, Redis, Qdrant, Meilisearch, 
 Portainer, Loki/Promtail/Alertmanager/Blackbox, continuityos, TokenGoblin, kamal-proxy, etc.),
 listening ports, and GPU allocation (V100 / P40 / RTX3060). The enterprise is observable as
 one system: code + runtime + hardware.
+
+## Live enterprise dashboard
+
+EACP serves a self-contained HTML dashboard at `/dashboard` (polls the API every 15s):
+repo/layer counts, live service health (C-EPYC-native), Docker container count, listening
+ports, GPU allocation + utilization, and ingested OpenAPI specs. Reachable at
+`http://127.0.0.1:8099/dashboard` (or behind Caddy :8086/:8443).
+
+## Idle-GPU monetization (commercial lever)
+
+`gpu-batch-scheduler.py` + `gpu-batch-scheduler.{service,timer}` — DORMANT until the revenue
+ledger records a REAL (non-synthetic) Stripe payment. While locked it does nothing but log
+its state; on unlock it schedules batch GPU jobs across idle GPUs via the compute-api.
+Respects the enterprise "no synthetic revenue" rule — synthetic ledger never unlocks it.
