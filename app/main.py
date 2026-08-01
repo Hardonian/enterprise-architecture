@@ -81,6 +81,14 @@ def service_health(name: str):
     return {"name": name, "probe": probe(endpoint)}
 
 
+@app.get("/infrastructure")
+def infrastructure():
+    """Live runtime topology: Docker containers, listening ports, GPU allocation.
+    Makes EACP enterprise-grade — it maps the runtime substrate, not just repos."""
+    from app import infrastructure as infra
+    return infra.discover_all()
+
+
 @app.get("/openapi")
 def openapi_status():
     """Ingest live OpenAPI specs from services that expose them.

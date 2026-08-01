@@ -47,3 +47,24 @@ wiring table.
 This is the **control-plane layer** of the enterprise. It does not replace any existing repo;
 it makes the enterprise *observable as one system*. All other repos remain the owners of their
 own domains. EACP is the map, not the territory.
+
+## Endpoints (full control plane)
+
+| Method | Path | Purpose |
+|---|---|---|
+| GET | `/health` | Liveness |
+| GET | `/catalog` | Full 58-repo classified catalog |
+| GET | `/layers` | Layer names + counts |
+| GET | `/wiring` | Layer → service → endpoint map |
+| GET | `/service/{name}/health` | Probe one service |
+| GET | `/probe-all` | Probe every known live endpoint (C-EPYC-native engine) |
+| GET | `/openapi` | Ingest live OpenAPI specs from services that expose them |
+| GET | `/infrastructure` | Live runtime topology: Docker containers, listening ports, GPU allocation |
+
+## Runtime topology awareness
+
+EACP is enterprise-grade: beyond the 58 GitHub repos, `/infrastructure` discovers the live
+substrate — Docker containers (Postgres-pgvector, Redis, Qdrant, Meilisearch, OpenWebUI, n8n,
+Portainer, Loki/Promtail/Alertmanager/Blackbox, continuityos, TokenGoblin, kamal-proxy, etc.),
+listening ports, and GPU allocation (V100 / P40 / RTX3060). The enterprise is observable as
+one system: code + runtime + hardware.
