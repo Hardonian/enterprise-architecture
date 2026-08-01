@@ -1,0 +1,14 @@
+[Unit]
+Description=Enterprise Architecture Control Plane (EACP) — FastAPI service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/ai-workspace/repos/enterprise-architecture
+ExecStart=%h/.local/bin/uv run uvicorn app.main:app --port 8099
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target

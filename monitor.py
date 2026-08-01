@@ -44,6 +44,13 @@ def main():
     report = {"timestamp": ts, "engine": rep.get("engine"),
               "probed": len(results), "up": up, "down": len(results) - up,
               "results": results}
+    # also capture live runtime topology trend (containers / ports / gpus)
+    try:
+        with urllib.request.urlopen("http://127.0.0.1:8099/infrastructure", timeout=5) as r:
+            infra = json.loads(r.read())
+        report["topology"] = infra.get("summary", {})
+    except Exception:
+        pass
     out_path = os.path.join(STATE_DIR, f"probe-{ts[:10]}.json")
     # append-line jsonl for trending
     with open(os.path.join(STATE_DIR, "probe-history.jsonl"), "a") as f:
@@ -51,7 +58,9 @@ def main():
     # keep latest snapshot
     with open(os.path.join(STATE_DIR, "probe-latest.json"), "w") as f:
         json.dump(report, f, indent=2)
-    print(f"[eacp-monitor {ts}] engine={rep.get('engine')} up={up}/{len(results)}")
+    topo = report.get("topology", {})
+    topo_s = f"containers={topo.get('containers')} ports={topo.get('ports')} gpus={topo.get('gpus')}" if topo else "topology=n/a"
+    print(f"[eacp-monitor {ts}] engine={rep.get('engine')} up={up}/{len(results)} {topo_s}")
 
 
 if __name__ == "__main__":
