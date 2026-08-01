@@ -1,0 +1,9 @@
+[project]
+name = "enterprise-architecture"
+version = "1.0.0"
+description = "Enterprise Architecture Control Plane (EACP) — the missing top-level service-group that wires the entire Hardonian enterprise."
+requires-python = ">=3.11"
+dependencies = ["fastapi>=0.110", "uvicorn>=0.29"]
+
+[tool.uv]
+package = false

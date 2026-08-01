@@ -1,0 +1,7 @@
+Metadata-Version: 2.4
+Name: enterprise-architecture
+Version: 1.0.0
+Summary: Enterprise Architecture Control Plane (EACP) — the missing top-level service-group that wires the entire Hardonian enterprise.
+Requires-Python: >=3.11
+Requires-Dist: fastapi>=0.110
+Requires-Dist: uvicorn>=0.29

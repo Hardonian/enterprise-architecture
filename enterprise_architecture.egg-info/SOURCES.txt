@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+app/catalog.py
+app/main.py
+enterprise_architecture.egg-info/PKG-INFO
+enterprise_architecture.egg-info/SOURCES.txt
+enterprise_architecture.egg-info/dependency_links.txt
+enterprise_architecture.egg-info/requires.txt
+enterprise_architecture.egg-info/top_level.txt

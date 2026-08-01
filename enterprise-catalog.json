@@ -1,0 +1,557 @@
+{
+  "generated": "2026-07-31",
+  "control_plane": "enterprise-architecture (EACP)",
+  "total_live": 58,
+  "layers": {
+    "Identity & Access": [
+      {
+        "name": "Keys",
+        "url": "https://github.com/Hardonian/Keys",
+        "lang": {
+          "name": "TypeScript"
+        },
+        "desc": "Deterministic mission control for AI agents with explicit constraints, auditable actions, ",
+        "endpoint": null
+      },
+      {
+        "name": "identity-entitlement-broker",
+        "url": "https://github.com/Hardonian/identity-entitlement-broker",
+        "lang": {
+          "name": "Java"
+        },
+        "desc": "Enterprise identity and entitlement broker with SSO, SCIM, tenant isolation, audit trails,",
+        "endpoint": null
+      }
+    ],
+    "AI Inference Runtime": [
+      {
+        "name": "ai-lab",
+        "url": "https://github.com/Hardonian/ai-lab",
+        "lang": {
+          "name": "Python"
+        },
+        "desc": "AI lab orchestration: ComfyUI/Gumroad ops, revenue-OS product defs, automation scripts, st",
+        "endpoint": null
+      },
+      {
+        "name": "ai-lab-audit-api",
+        "url": "https://github.com/Hardonian/ai-lab-audit-api",
+        "lang": {
+          "name": "Python"
+        },
+        "desc": "Local-first AI-lab audit API with reports, metrics, and checkout integration",
+        "endpoint": "http://localhost:8011/health"
+      },
+      {
+        "name": "ai-lab-audit-api-staging",
+        "url": "https://github.com/Hardonian/ai-lab-audit-api-staging",
+        "lang": null,
+        "desc": "",
+        "endpoint": null
+      },
+      {
+        "name": "ai-lab-command-center",
+        "url": "https://github.com/Hardonian/ai-lab-command-center",
+        "lang": {
+          "name": "Python"
+        },
+        "desc": "Local-first AI operator dashboard with Revenue OS, service health, GPU truth, workflow con",
+        "endpoint": "http://localhost:8090/health"
+      },
+      {
+        "name": "comfyui-api",
+        "url": "https://github.com/Hardonian/comfyui-api",
+        "lang": {
+          "name": "HTML"
+        },
+        "desc": "ComfyUI API wrapper for programmatic workflow execution, batch generation, and pipeline in",
+        "endpoint": "http://localhost:8188/"
+      },
+      {
+        "name": "llm-inference-api",
+        "url": "https://github.com/Hardonian/llm-inference-api",
+        "lang": {
+          "name": "Python"
+        },
+        "desc": "LLM inference API gateway for routing, rate-limiting, and load-balancing across multiple l",
+        "endpoint": null
+      },
+      {
+        "name": "ollama-router",
+        "url": "https://github.com/Hardonian/ollama-router",
+        "lang": {
+          "name": "Python"
+        },
+        "desc": "Hardonia ollama-router (bootstrap-ready)",
+        "endpoint": "http://localhost:11438/api/tags"
+      }
+    ],
+    "Governance & Evidence": [
+      {
+        "name": "EvidenceVault",
+        "url": "https://github.com/Hardonian/EvidenceVault",
+        "lang": {
+          "name": "Go"
+        },
+        "desc": "Evidence management system for uploading, tracking, reminding, and exporting compliance do",
+        "endpoint": null
+      },
+      {
+        "name": "MissionLedger",
+        "url": "https://github.com/Hardonian/MissionLedger",
+        "lang": {
+          "name": "Go"
+        },
+        "desc": "Governed agent execution substrate with deterministic policy and proof-grade mission recor",
+        "endpoint": null
+      },
+      {
+        "name": "Reach",
+        "url": "https://github.com/Hardonian/Reach",
+        "lang": {
+          "name": "TypeScript"
+        },
+        "desc": "Reach brings powerful, auditable AI-driven workflows to your device while keeping heavy ex",
+        "endpoint": null
+      },
+      {
+        "name": "ReadyLayer",
+        "url": "https://github.com/Hardonian/ReadyLayer",
+        "lang": {
+          "name": "TypeScript"
+        },
+        "desc": "ReadyLayer plugs into GitHub, GitLab, Bitbucket, Azure DevOps, VS Code, JetBrains, Slack, ",
+        "endpoint": null
+      },
+      {
+        "name": "Requiem",
+        "url": "https://github.com/Hardonian/Requiem",
+        "lang": {
+          "name": "TypeScript"
+        },
+        "desc": "Requiem is the unified AI control plane repository. It contains: The Requiem kernel (engin",
+        "endpoint": null
+      },
+      {
+        "name": "hardonia-audit-pack",
+        "url": "https://github.com/Hardonian/hardonia-audit-pack",
+        "lang": {
+          "name": "Python"
+        },
+        "desc": "Hardonia audit pack for systematic infrastructure, security, and compliance audits across ",
+        "endpoint": null
+      },
+      {
+        "name": "truthcore",
+        "url": "https://github.com/Hardonian/truthcore",
+        "lang": {
+          "name": "Python"
+        },
+        "desc": "Truth Core provides a cutting-edge platform for deterministic verification, featuring cont",
+        "endpoint": null
+      },
+      {
+        "name": "webhook-witness",
+        "url": "https://github.com/Hardonian/webhook-witness",
+        "lang": {
+          "name": "HTML"
+        },
+        "desc": "Webhook delivery witness for verifying, replaying, and auditing incoming webhook events wi",
+        "endpoint": null
+      },
+      {
+        "name": "workproof-exchange",
+        "url": "https://github.com/Hardonian/workproof-exchange",
+        "lang": {
+          "name": "Go"
+        },
+        "desc": "",
+        "endpoint": null
+      }
+    ],
+    "Finance & Cost": [
+      {
+        "name": "Settler",
+        "url": "https://github.com/Hardonian/Settler",
+        "lang": {
+          "name": "TypeScript"
+        },
+        "desc": "Reconciliation intelligence platform for payments, evidence, matching, and financial workf",
+        "endpoint": null
+      },
+      {
+        "name": "TokenGoblin",
+        "url": "https://github.com/Hardonian/TokenGoblin",
+        "lang": {
+          "name": "Go"
+        },
+        "desc": "Token usage measurement and routing/cost tooling for LLM workloads",
+        "endpoint": null
+      },
+      {
+        "name": "finops-autopilot",
+        "url": "https://github.com/Hardonian/finops-autopilot",
+        "lang": {
+          "name": "TypeScript"
+        },
+        "desc": "A runnerless finops autopilot that ingests billing event exports (Stripe-like but generic)",
+        "endpoint": null
+      },
+      {
+        "name": "settler-gateway",
+        "url": "https://github.com/Hardonian/settler-gateway",
+        "lang": {
+          "name": "Shell"
+        },
+        "desc": "Hardonia settler-gateway (bootstrap-ready)",
+        "endpoint": null
+      }
+    ],
+    "Delivery & Pipelines": [
+      {
+        "name": "JobForge",
+        "url": "https://github.com/Hardonian/JobForge",
+        "lang": {
+          "name": "TypeScript"
+        },
+        "desc": "Language-Agnostic Job Orchestrator for Postgres Problem: A Postgres-native job framework: ",
+        "endpoint": null
+      },
+      {
+        "name": "MEL-MeshEdgeLayer",
+        "url": "https://github.com/Hardonian/MEL-MeshEdgeLayer",
+        "lang": {
+          "name": "Go"
+        },
+        "desc": "Privacy-first open-source edge layer for Meshtastic mesh networks with intelligent relayin",
+        "endpoint": null
+      },
+      {
+        "name": "Nautilus",
+        "url": "https://github.com/Hardonian/Nautilus",
+        "lang": {
+          "name": "TypeScript"
+        },
+        "desc": "Operator-grade local AI execution, orchestration, and governance platform for heterogeneou",
+        "endpoint": null
+      },
+      {
+        "name": "Zeo",
+        "url": "https://github.com/Hardonian/Zeo",
+        "lang": {
+          "name": "TypeScript"
+        },
+        "desc": "Zeo is a production-grade governance platform for automated code review, policy enforcemen",
+        "endpoint": null
+      },
+      {
+        "name": "cloudflare-deploy-template",
+        "url": "https://github.com/Hardonian/cloudflare-deploy-template",
+        "lang": {
+          "name": "Shell"
+        },
+        "desc": "Reusable Cloudflare Workers + Pages deployment template with one-shot deploy script",
+        "endpoint": null
+      },
+      {
+        "name": "edgevec",
+        "url": "https://github.com/Hardonian/edgevec",
+        "lang": {
+          "name": "C"
+        },
+        "desc": "Pure-C zero-dependency edge inference gateway + vector index",
+        "endpoint": null
+      },
+      {
+        "name": "enterprise-integration-fabric",
+        "url": "https://github.com/Hardonian/enterprise-integration-fabric",
+        "lang": {
+          "name": "Kotlin"
+        },
+        "desc": "Vendor-neutral enterprise integration fabric for LMS, SIS, CRM, billing, identity, analyti",
+        "endpoint": null
+      },
+      {
+        "name": "fabricd",
+        "url": "https://github.com/Hardonian/fabricd",
+        "lang": {
+          "name": "C"
+        },
+        "desc": "Pure-C zero-dependency sovereign AI-lab control plane",
+        "endpoint": null
+      },
+      {
+        "name": "migration-factory",
+        "url": "https://github.com/Hardonian/migration-factory",
+        "lang": {
+          "name": "C#"
+        },
+        "desc": "",
+        "endpoint": null
+      }
+    ],
+    "Commercial & Checkout": [
+      {
+        "name": "FlexibleAccessible",
+        "url": "https://github.com/Hardonian/FlexibleAccessible",
+        "lang": {
+          "name": "TypeScript"
+        },
+        "desc": "Production-grade accessibility compliance platform with automated WCAG auditing, fix sugge",
+        "endpoint": null
+      },
+      {
+        "name": "Operator-OS-Marketplace",
+        "url": "https://github.com/Hardonian/Operator-OS-Marketplace",
+        "lang": {
+          "name": "Shell"
+        },
+        "desc": "Operator OS marketplace for listing, discovering, and subscribing to AI operator services ",
+        "endpoint": null
+      },
+      {
+        "name": "b2b-rust-api-opportunity-suite",
+        "url": "https://github.com/Hardonian/b2b-rust-api-opportunity-suite",
+        "lang": null,
+        "desc": "B2B Rust API opportunity suite for evaluating, prototyping, and scoring high-leverage API ",
+        "endpoint": null
+      },
+      {
+        "name": "commercial-architecture-simulator",
+        "url": "https://github.com/Hardonian/commercial-architecture-simulator",
+        "lang": {
+          "name": "Elixir"
+        },
+        "desc": "Commercial architecture simulator for modeling product, integration, and operating-layer t",
+        "endpoint": null
+      },
+      {
+        "name": "hardonia-checkout-api",
+        "url": "https://github.com/Hardonian/hardonia-checkout-api",
+        "lang": {
+          "name": "Python"
+        },
+        "desc": "Hardonia checkout API \u2014 Stripe checkout + webhook service",
+        "endpoint": "http://localhost:8012/health"
+      },
+      {
+        "name": "hardonia-compute-api",
+        "url": "https://github.com/Hardonian/hardonia-compute-api",
+        "lang": {
+          "name": "Python"
+        },
+        "desc": "Hardonia compute API \u2014 GPU/pay-per-job access layer",
+        "endpoint": "http://localhost:8050/health"
+      },
+      {
+        "name": "storefront",
+        "url": "https://github.com/Hardonian/storefront",
+        "lang": {
+          "name": "Python"
+        },
+        "desc": "Hardonia storefront (bootstrap-ready)",
+        "endpoint": null
+      }
+    ],
+    "Observability & Ops": [
+      {
+        "name": "cloudflare-app-ops-dashboard",
+        "url": "https://github.com/Hardonian/cloudflare-app-ops-dashboard",
+        "lang": {
+          "name": "HTML"
+        },
+        "desc": "Cloudflare app operations dashboard for monitoring zone health, worker deployments, page d",
+        "endpoint": null
+      },
+      {
+        "name": "continuityos",
+        "url": "https://github.com/Hardonian/continuityos",
+        "lang": {
+          "name": "Python"
+        },
+        "desc": "Continuity assurance reference API for cyber-physical trade corridors",
+        "endpoint": null
+      },
+      {
+        "name": "floyo",
+        "url": "https://github.com/Hardonian/floyo",
+        "lang": {
+          "name": "TypeScript"
+        },
+        "desc": "Workflow-intelligence platform that detects hidden integration and automation opportunitie",
+        "endpoint": null
+      },
+      {
+        "name": "growth-autopilot",
+        "url": "https://github.com/Hardonian/growth-autopilot",
+        "lang": {
+          "name": "TypeScript"
+        },
+        "desc": "A runnerless growth autopilot that scans site structure (routes or exported HTML), generat",
+        "endpoint": null
+      },
+      {
+        "name": "labsentry",
+        "url": "https://github.com/Hardonian/labsentry",
+        "lang": {
+          "name": "C"
+        },
+        "desc": "Pure-C zero-dependency AI-lab auditor and image pipeline",
+        "endpoint": null
+      },
+      {
+        "name": "prompt-ops-hardonia-packs",
+        "url": "https://github.com/Hardonian/prompt-ops-hardonia-packs",
+        "lang": {
+          "name": "Python"
+        },
+        "desc": "Prompt operations packs for structured AI prompt management, versioning, and deployment ac",
+        "endpoint": null
+      },
+      {
+        "name": "support-autopilot",
+        "url": "https://github.com/Hardonian/support-autopilot",
+        "lang": {
+          "name": "TypeScript"
+        },
+        "desc": "A runnerless support autopilot that ingests tickets + KB docs, performs triage, drafts res",
+        "endpoint": null
+      },
+      {
+        "name": "tfstate-drift-inspector",
+        "url": "https://github.com/Hardonian/tfstate-drift-inspector",
+        "lang": {
+          "name": "Python"
+        },
+        "desc": "Terraform state drift inspector that compares live infrastructure against tfstate, reports",
+        "endpoint": null
+      }
+    ],
+    "Content & Docs": [
+      {
+        "name": "JupyterNotebooks",
+        "url": "https://github.com/Hardonian/JupyterNotebooks",
+        "lang": {
+          "name": "Python"
+        },
+        "desc": "Applied AI notebooks and workflow experiments for OpenAI SDK, n8n, CrewAI, local automatio",
+        "endpoint": null
+      },
+      {
+        "name": "api-changelog-radar",
+        "url": "https://github.com/Hardonian/api-changelog-radar",
+        "lang": {
+          "name": "HTML"
+        },
+        "desc": "API changelog radar that diffs OpenAPI/AsyncAPI specs across releases, detects breaking ch",
+        "endpoint": null
+      },
+      {
+        "name": "apva-framework",
+        "url": "https://github.com/Hardonian/apva-framework",
+        "lang": {
+          "name": "Python"
+        },
+        "desc": "Reliability-adjusted AI ROI benchmarking framework for scoring workflow value, guardrail c",
+        "endpoint": null
+      },
+      {
+        "name": "doc-intel-api",
+        "url": "https://github.com/Hardonian/doc-intel-api",
+        "lang": {
+          "name": "HTML"
+        },
+        "desc": "Document intelligence API for extraction, classification, and structured data pipeline pro",
+        "endpoint": null
+      },
+      {
+        "name": "gbmds",
+        "url": "https://github.com/Hardonian/gbmds",
+        "lang": {
+          "name": "Go"
+        },
+        "desc": "GPU Bifurcation & Model Sharing Protocol - Unified GPU resource management across all vend",
+        "endpoint": null
+      }
+    ],
+    "Edge & Cloudflare": [
+      {
+        "name": "cloudflare-launch-portfolio",
+        "url": "https://github.com/Hardonian/cloudflare-launch-portfolio",
+        "lang": {
+          "name": "HTML"
+        },
+        "desc": "Cloudflare launch portfolio for deploying and managing multiple Cloudflare Workers and Pag",
+        "endpoint": null
+      },
+      {
+        "name": "thermalos-web",
+        "url": "https://github.com/Hardonian/thermalos-web",
+        "lang": {
+          "name": "TypeScript"
+        },
+        "desc": "ThermalOS web frontend (Next.js tenant scaffolding)",
+        "endpoint": null
+      }
+    ],
+    "Integration Fabric": [
+      {
+        "name": "golden-path-platform",
+        "url": "https://github.com/Hardonian/golden-path-platform",
+        "lang": {
+          "name": "Python"
+        },
+        "desc": "Golden-path internal developer platform reference architecture for service standardization",
+        "endpoint": null
+      }
+    ],
+    "Enterprise Portal & Strategy": [
+      {
+        "name": "Hardonian",
+        "url": "https://github.com/Hardonian/Hardonian",
+        "lang": {
+          "name": "Python"
+        },
+        "desc": "Profile README and configuration for Scott Hardie \u2014 Solutions Architect, AI Systems Operat",
+        "endpoint": null
+      },
+      {
+        "name": "claude-builders-bounty",
+        "url": "https://github.com/Hardonian/claude-builders-bounty",
+        "lang": null,
+        "desc": "A community bounty board for Claude Code builders \u2014 post tasks, claim rewards, build toget",
+        "endpoint": null
+      },
+      {
+        "name": "nick-morfopos-strategic",
+        "url": "https://github.com/Hardonian/nick-morfopos-strategic",
+        "lang": {
+          "name": "HTML"
+        },
+        "desc": "",
+        "endpoint": null
+      },
+      {
+        "name": "teemot",
+        "url": "https://github.com/Hardonian/teemot",
+        "lang": null,
+        "desc": "",
+        "endpoint": null
+      }
+    ]
+  },
+  "layer_counts": {
+    "Identity & Access": 2,
+    "AI Inference Runtime": 7,
+    "Governance & Evidence": 9,
+    "Finance & Cost": 4,
+    "Delivery & Pipelines": 9,
+    "Commercial & Checkout": 7,
+    "Observability & Ops": 8,
+    "Content & Docs": 5,
+    "Edge & Cloudflare": 2,
+    "Integration Fabric": 1,
+    "Enterprise Portal & Strategy": 4
+  },
+  "uncategorized": []
+}
