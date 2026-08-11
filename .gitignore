@@ -5,3 +5,10 @@ __pycache__/
 *.gcno
 probe.gen
 state/
+.env
+node_modules/
+build/
+.pytest_cache/
+.idea/
+.vscode/
+*.log
