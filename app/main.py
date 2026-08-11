@@ -157,3 +157,6 @@ def probe_all():
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8099)
+
+from health_metrics import router as health_metrics_router
+app.include_router(health_metrics_router)
