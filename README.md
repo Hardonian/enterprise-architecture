@@ -82,3 +82,17 @@ ports, GPU allocation + utilization, and ingested OpenAPI specs. Reachable at
 ledger records a REAL (non-synthetic) Stripe payment. While locked it does nothing but log
 its state; on unlock it schedules batch GPU jobs across idle GPUs via the compute-api.
 Respects the enterprise "no synthetic revenue" rule — synthetic ledger never unlocks it.
+
+---
+
+## Related Hardonia projects
+
+Part of the [Hardonia](https://aiautomatedsystems.ca) open-source + services stack:
+
+- **[ollama-router](https://github.com/Hardonian/ollama-router)** — self-optimizing multi-GPU Ollama router
+- **[ai-lab-audit-api](https://github.com/Hardonian/ai-lab-audit-api)** — local-first AI-lab audit API
+- **[ai-lab-command-center](https://github.com/Hardonian/ai-lab-command-center)** — AI operator dashboard
+- **[storefront](https://github.com/Hardonian/storefront)** — local-first product catalog + lead capture
+
+### Need a review?
+Get a fixed-scope [SaaS Repo Rescue Audit](https://aiautomatedsystems.ca/p/repo-rescue-saas-audit) — auth, billing, RLS, and webhook bugs found before customers do. Runs locally on your infra.
