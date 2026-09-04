@@ -1,5 +1,9 @@
 # enterprise-architecture
 
+<!-- BEGIN: REPO HERO -->
+![enterprise-architecture — hero generated locally on the GPU stack](assets/repo-hero.png)
+<!-- END: REPO HERO -->
+
 **Enterprise Architecture Control Plane (EACP)** — the missing top-level service-group that
 wires the entire Hardonian enterprise together.
 
